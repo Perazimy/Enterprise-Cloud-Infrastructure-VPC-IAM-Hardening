@@ -89,42 +89,49 @@ This project designs and implements an enterprise-grade **Cloud Security Archite
 
 ### Test 1: AWS Account Hardening & Root MFA Enforcement
 ![AWS Root MFA](Screenshots/01_AWS_Root_MFA_Budget_Alert.png.png)
+
 *Figure 1: AWS IAM Security Credentials console for account holder `Chukwubuzor Perazim` confirming Root Multi-Factor Authentication (MFA) enforcement with active MFA devices assigned, protecting the root identity from credential compromise.*
 
 ---
 
 ### Test 2: IAM Operational Administrator Provisioning & MFA Hardening
 ![IAM User MFA](Screenshots/02_IAM_User_Group_MFA_Policy.png.png)
+
 *Figure 2: AWS IAM console confirming the dedicated operational administrator identity `admin-chukwubuzor` has been provisioned and fortified with an active Virtual MFA device, enforcing least-privilege non-root operations.*
 
 ---
 
 ### Test 3: Multi-Tier VPC Segmentation & Resource Topology Map
 ![VPC Resource Map](Screenshots/03_VPC_Resource_Map_Subnets.png.png)
+
 *Figure 3: AWS VPC Resource Map displaying `Corp-VPC-Prod` with verified architectural tiering in Availability Zone `eu-north-1a`: Public DMZ subnet (`Corp-Subnet-Public-1a`) bound to `Corp-RT-Public` alongside isolated Private Data subnet (`Corp-Subnet-Private-1a`) bound to `Corp-RT-Private`.*
 
 ---
 
 ### Test 4: Route Table Egress Segregation (Public vs. Private)
 ![Route Tables](Screenshots/04_Route_Tables_IGW_Association.png.png)
+
 *Figure 4: AWS Route Tables console for `Corp-RT-Public` (`rtb-0fd3eb6c07ac12d25`) verifying active default egress routing: `0.0.0.0/0` targeted to Internet Gateway `igw-0a01f6...` alongside local VPC routing (`10.0.0.0/16`).*
 
 ---
 
 ### Test 5: Stateful Security Group Chaining
 ![Security Group Chaining](Screenshots/05_Security_Group_Chaining.png.png)
+
 *Figure 5: Inbound firewall rules for `Corp-SG-Internal-DB` (`sg-0db2f0c260e5287de`) demonstrating Security Group Chaining: MySQL/Aurora (port 3306) ingress restricted exclusively to the source Security Group ID of `Corp-SG-Web-DMZ` (`sg-0fdcdefc35946abea...`).*
 
 ---
 
 ### Test 6: Zero-Trust Management via AWS Systems Manager (SSM) Session Manager
 ![SSM Session Manager](Screenshots/06_SSM_Session_Manager_Zero_Inbound.png.png)
+
 *Figure 6: Interactive browser-based shell established into `Corp-Web-Server-01` via AWS Systems Manager Session Manager under authenticated IAM identity `admin-chukwubuzor`, verifying zero open inbound management ports (SSH Port 22 closed), verified outbound package repository connectivity, and active web service response displaying custom engineering signature.*
 
 ---
 
 ### Test 7: Immutable CloudTrail Governance & Audit Logging
 ![CloudTrail Event Log](Screenshots/07_CloudTrail_Security_Event_Log.png.png)
+
 *Figure 7: AWS CloudTrail Event History console for account `Chukwubuzor Perazim (998583534425)` under operational identity `admin-chukwubuzor`, verifying immutable auditing telemetry capturing real-time Systems Manager session negotiations (`CreateDataChannel`, `OpenDataChannel`) and agent updates (`UpdateInstanceInformation`) for compute instance `i-002fd80b81370a120`.*
 
 ---
