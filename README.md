@@ -1,1 +1,0 @@
-# Enterprise-Cloud-Infrastructure-VPC-IAM-Hardening
